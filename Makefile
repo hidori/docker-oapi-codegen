@@ -2,19 +2,15 @@ IMAGE_NAME = hidori/oapi-codegen
 
 .PHONY: build
 build:
-	docker build -f ./Dockerfile -t ${IMAGE_NAME}:latest .
+	docker build -f ./Dockerfile -t ${IMAGE_NAME} .
 
 .PHONY: rebuild
 rebuild:
-	docker build -f ./Dockerfile -t ${IMAGE_NAME}:latest --no-cache .
+	docker build -f ./Dockerfile -t ${IMAGE_NAME} --no-cache .
 
 .PHONY: rmi
 rmi:
 	docker rmi -f ${IMAGE_NAME}
-
-.PHONY: pull
-pull: rmi
-	docker pull ${IMAGE_NAME}
 
 .PHONY: run
 run:
