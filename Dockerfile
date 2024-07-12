@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM node:20-alpine3.19
 
 RUN apk update \
     && apk add --no-cache \
