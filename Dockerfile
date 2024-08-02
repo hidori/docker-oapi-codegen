@@ -7,6 +7,6 @@ RUN apk update \
 
 ENV CGO_ENABLED=0
 
-RUN go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@v2.3.0
+RUN go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
 
 ENTRYPOINT [ "oapi-codegen" ]

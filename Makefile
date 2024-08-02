@@ -14,4 +14,12 @@ rmi:
 
 .PHONY: run
 run:
-	docker run --rm -w $$PWD -v $$PWD:$$PWD hidori/oapi-codegen -generate types,server -package oapi ./petstore.yaml
+	docker run --rm -w $$PWD -v $$PWD:$$PWD ${IMAGE_NAME} --help
+
+.PHONY: version
+version: build
+	git checkout main
+	git fetch
+	git pull
+	git tag `grep /oapi-codegen go.mod | awk '{print substr($$3,2)}'`
+	git push --tags
