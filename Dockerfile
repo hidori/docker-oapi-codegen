@@ -10,7 +10,7 @@ ENV CGO_ENABLED=0
 RUN go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest \
     && cp `which oapi-codegen` /oapi-codegen
 
-FROM alpine:3.21 AS runner
+FROM alpine:3.22 AS runner
 
 COPY --from=builder /oapi-codegen /usr/local/bin
 
