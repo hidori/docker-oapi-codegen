@@ -13,5 +13,5 @@ docker pull hidori/oapi-codegen
 ## EXAMPLE
 
 ```bash
-docker run --rm -w $PWD -v $PWD:$PWD hidori/oapi-codegen -generate types,server -package oapi ./petstore.yaml
+docker run --rm -w $PWD -v $PWD:$PWD hidori/oapi-codegen -generate types,server -package oapi example.yaml
 ```
